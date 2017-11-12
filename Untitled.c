@@ -16,26 +16,38 @@
 #define A3 PORTAbits.RA3
 #define A4 PORTAbits.RA4
 
-
+/** Check Param6 is runnin or not. */
 static boolean Param6isAlive;
+
+/** Check Param6 is runnin or not. */
 static boolean Param11isAlive;
+
+/** Check Timmer mode. */
 static boolean TimerMode;
+
+/** Check Power Mode is runnin or not. */
 static boolean RelayPowerMode;
 
+/** Timer counter. */
 static int Count = 0;
 
-static ButtonOnOF(){
-
+/** 
+ * On/Off controller.
+ */
+static void ButtonOnOF(){
 	if(A0 == 0){
 		if(TimerMode){
 		__delay_ms(2000);
-			B=1;
-		}else B=1;	
+			B = 1;
+		}else B = 1;	
      }
-	if(A1 == 0)
-         	B=0;
+  	if(A1 == 0)
+       	B = 0;
 }
 
+/** 
+ *  Control parameters
+ */
 static void BooleanFlagsControl(){	
 	if(A2 == 0){
 		Param6isAlive=false;
@@ -52,21 +64,34 @@ static void BooleanFlagsControl(){
  	else RelayPowerMode=false;
 }		
 
-
+/**
+ * Click mode.
+ */
 static void Param6();
+
+/**
+ * Hold control mode.
+ */
 static void Param11(); 
+
+/**
+ * Load power in watt.
+ */
 static void Param21();
 
-
+/**
+ * Entry point. 
+ */
 int main(){
 
-ADCON1 = 7; //bolor mutqer@ tvayin
+ADCON1 = 7; //bolory tvayin
+T1CON = 1;
+
 TRISB = 0b11111100;
 PORTB=0;
 
 TRISA = 0b00000000;
 PORTA = 0b11111111;
-T1CON = 1;
 
 while(1){
 	BooleanFlagsControl();
@@ -86,9 +111,7 @@ static void Param11() {
 	while (! TMR1IF);
 	TMR1IF = 0;
 	Count ++;
-	if (Count == 100)
-	{	
-	
+	if (Count == 100){		
 	Count = 0;
 	ButtonOnOF();
 	TMR1IF = 0;
