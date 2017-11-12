@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC LITE Macro Assembler V9.82 build 9453 
-                                                                                               Sun Nov 12 16:43:29 2017
+                                                                                               Sun Nov 12 17:06:25 2017
 
 HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
      1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 9453"
@@ -100,7 +100,7 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
     94                           	line	#
     95                           psect cinit,class=CODE,delta=2
     96                           global start_initialization
-    97  0738                     start_initialization:
+    97  0734                     start_initialization:
     98                           
     99                           psect	bssCOMMON,class=COMMON,space=1
    100                           global __pbssCOMMON
@@ -122,24 +122,24 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
    116                           
    117                           ; Clear objects allocated to COMMON
    118                           psect cinit,class=CODE,delta=2
-   119  0738  01F0               	clrf	((__pbssCOMMON)+0)&07Fh
-   120  0739  01F1               	clrf	((__pbssCOMMON)+1)&07Fh
-   121  073A  01F2               	clrf	((__pbssCOMMON)+2)&07Fh
-   122  073B  01F3               	clrf	((__pbssCOMMON)+3)&07Fh
-   123  073C  01F4               	clrf	((__pbssCOMMON)+4)&07Fh
-   124  073D  01F5               	clrf	((__pbssCOMMON)+5)&07Fh
-   125  073E  01F6               	clrf	((__pbssCOMMON)+6)&07Fh
-   126  073F  01F7               	clrf	((__pbssCOMMON)+7)&07Fh
-   127  0740  01F8               	clrf	((__pbssCOMMON)+8)&07Fh
-   128  0741  01F9               	clrf	((__pbssCOMMON)+9)&07Fh
+   119  0734  01F0               	clrf	((__pbssCOMMON)+0)&07Fh
+   120  0735  01F1               	clrf	((__pbssCOMMON)+1)&07Fh
+   121  0736  01F2               	clrf	((__pbssCOMMON)+2)&07Fh
+   122  0737  01F3               	clrf	((__pbssCOMMON)+3)&07Fh
+   123  0738  01F4               	clrf	((__pbssCOMMON)+4)&07Fh
+   124  0739  01F5               	clrf	((__pbssCOMMON)+5)&07Fh
+   125  073A  01F6               	clrf	((__pbssCOMMON)+6)&07Fh
+   126  073B  01F7               	clrf	((__pbssCOMMON)+7)&07Fh
+   127  073C  01F8               	clrf	((__pbssCOMMON)+8)&07Fh
+   128  073D  01F9               	clrf	((__pbssCOMMON)+9)&07Fh
    129                           psect cinit,class=CODE,delta=2
    130                           global end_of_initialization
    131                           
    132                           ;End of C runtime variable initialization code
    133                           
-   134  0742                     end_of_initialization:
-   135  0742  0183               clrf status
-   136  0743  120A  118A  2FA7   ljmp _main	;jump to C main() function
+   134  073E                     end_of_initialization:
+   135  073E  0183               clrf status
+   136  073F  120A  118A  2FD0   ljmp _main	;jump to C main() function
    137                           psect	cstackCOMMON,class=COMMON,space=1
    138                           global __pcstackCOMMON
    139  007A                     __pcstackCOMMON:
@@ -151,14 +151,14 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
    145  007A                     ?_Param21:	; 0 bytes @ 0x0
    146                           	global	??_Param21
    147  007A                     ??_Param21:	; 0 bytes @ 0x0
-   148                           	global	??_ButtonOnOF
-   149  007A                     ??_ButtonOnOF:	; 0 bytes @ 0x0
-   150                           	global	?_BooleanFlagsControl
-   151  007A                     ?_BooleanFlagsControl:	; 0 bytes @ 0x0
-   152                           	global	??_BooleanFlagsControl
-   153  007A                     ??_BooleanFlagsControl:	; 0 bytes @ 0x0
-   154                           	global	?_ButtonOnOF
-   155  007A                     ?_ButtonOnOF:	; 2 bytes @ 0x0
+   148                           	global	?_ButtonOnOF
+   149  007A                     ?_ButtonOnOF:	; 0 bytes @ 0x0
+   150                           	global	??_ButtonOnOF
+   151  007A                     ??_ButtonOnOF:	; 0 bytes @ 0x0
+   152                           	global	?_BooleanFlagsControl
+   153  007A                     ?_BooleanFlagsControl:	; 0 bytes @ 0x0
+   154                           	global	??_BooleanFlagsControl
+   155  007A                     ??_BooleanFlagsControl:	; 0 bytes @ 0x0
    156                           	global	?_main
    157  007A                     ?_main:	; 2 bytes @ 0x0
    158  007A                     	ds	3
@@ -277,11 +277,11 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
    271                           	global	_main
    272                           psect	maintext,global,class=CODE,delta=2
    273                           global __pmaintext
-   274  07A7                     __pmaintext:
+   274  07D0                     __pmaintext:
    275                           
    276 ;; *************** function _main *****************
    277 ;; Defined at:
-   278 ;;		line 61 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+   278 ;;		line 85 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
    279 ;; Parameters:    Size  Location     Type
    280 ;;		None
    281 ;; Auto vars:     Size  Location     Type
@@ -311,762 +311,765 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
    305 ;; This function uses a non-reentrant model
    306 ;;
    307                           psect	maintext
-   308                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   309                           	line	61
+   308                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   309                           	line	85
    310                           	global	__size_of_main
-   311  002C                     	__size_of_main	equ	__end_of_main-_main
+   311  0030                     	__size_of_main	equ	__end_of_main-_main
    312                           	
-   313  07A7                     _main:	
+   313  07D0                     _main:	
    314                           	opt	stack 6
    315                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-   316                           	line	63
+   316                           	line	87
    317                           	
-   318  07A7                     l2615:	
-   319                           ;Untitled.c: 63: ADCON1 = 7;
-   320  07A7  3007               	movlw	(07h)
-   321  07A8  1683               	bsf	status, 5	;RP0=1, select bank1
-   322  07A9  1303               	bcf	status, 6	;RP1=0, select bank1
-   323  07AA  009F               	movwf	(159)^080h	;volatile
-   324                           	line	64
-   325                           ;Untitled.c: 64: TRISB = 0b11111100;
-   326  07AB  30FC               	movlw	(0FCh)
-   327  07AC  0086               	movwf	(134)^080h	;volatile
-   328                           	line	65
-   329                           	
-   330  07AD                     l2617:	
-   331                           ;Untitled.c: 65: PORTB=0;
-   332  07AD  1283               	bcf	status, 5	;RP0=0, select bank0
-   333  07AE  1303               	bcf	status, 6	;RP1=0, select bank0
-   334  07AF  0186               	clrf	(6)	;volatile
-   335                           	line	67
-   336                           	
-   337  07B0                     l2619:	
-   338                           ;Untitled.c: 67: TRISA = 0b00000000;
-   339  07B0  1683               	bsf	status, 5	;RP0=1, select bank1
-   340  07B1  1303               	bcf	status, 6	;RP1=0, select bank1
-   341  07B2  0185               	clrf	(133)^080h	;volatile
-   342                           	line	68
-   343                           ;Untitled.c: 68: PORTA = 0b11111111;
-   344  07B3  30FF               	movlw	(0FFh)
-   345  07B4  1283               	bcf	status, 5	;RP0=0, select bank0
-   346  07B5  1303               	bcf	status, 6	;RP1=0, select bank0
-   347  07B6  0085               	movwf	(5)	;volatile
-   348                           	line	69
-   349                           ;Untitled.c: 69: T1CON = 1;
-   350  07B7  3001               	movlw	(01h)
-   351  07B8  0090               	movwf	(16)	;volatile
-   352  07B9  2FBA               	goto	l2621
-   353                           	line	71
-   354                           ;Untitled.c: 71: while(1){
-   355                           	
-   356  07BA                     l675:	
-   357                           	line	72
-   358                           	
-   359  07BA                     l2621:	
-   360                           ;Untitled.c: 72: BooleanFlagsControl();
-   361  07BA  120A  118A  27D3   	fcall	_BooleanFlagsControl
+   318  07D0                     l2615:	
+   319                           ;Source.c: 87: ADCON1 = 7;
+   320  07D0  3007               	movlw	(07h)
+   321  07D1  1683               	bsf	status, 5	;RP0=1, select bank1
+   322  07D2  1303               	bcf	status, 6	;RP1=0, select bank1
+   323  07D3  009F               	movwf	(159)^080h	;volatile
+   324                           	line	88
+   325                           ;Source.c: 88: T1CON = 1;
+   326  07D4  3001               	movlw	(01h)
+   327  07D5  1283               	bcf	status, 5	;RP0=0, select bank0
+   328  07D6  1303               	bcf	status, 6	;RP1=0, select bank0
+   329  07D7  0090               	movwf	(16)	;volatile
+   330                           	line	90
+   331                           ;Source.c: 90: TRISB = 0b11111100;
+   332  07D8  30FC               	movlw	(0FCh)
+   333  07D9  1683               	bsf	status, 5	;RP0=1, select bank1
+   334  07DA  1303               	bcf	status, 6	;RP1=0, select bank1
+   335  07DB  0086               	movwf	(134)^080h	;volatile
+   336                           	line	91
+   337                           	
+   338  07DC                     l2617:	
+   339                           ;Source.c: 91: PORTB=0;
+   340  07DC  1283               	bcf	status, 5	;RP0=0, select bank0
+   341  07DD  1303               	bcf	status, 6	;RP1=0, select bank0
+   342  07DE  0186               	clrf	(6)	;volatile
+   343                           	line	93
+   344                           	
+   345  07DF                     l2619:	
+   346                           ;Source.c: 93: TRISA = 0b00000000;
+   347  07DF  1683               	bsf	status, 5	;RP0=1, select bank1
+   348  07E0  1303               	bcf	status, 6	;RP1=0, select bank1
+   349  07E1  0185               	clrf	(133)^080h	;volatile
+   350                           	line	94
+   351                           ;Source.c: 94: PORTA = 0b11111111;
+   352  07E2  30FF               	movlw	(0FFh)
+   353  07E3  1283               	bcf	status, 5	;RP0=0, select bank0
+   354  07E4  1303               	bcf	status, 6	;RP1=0, select bank0
+   355  07E5  0085               	movwf	(5)	;volatile
+   356  07E6  2FE7               	goto	l2621
+   357                           	line	96
+   358                           ;Source.c: 96: while(1){
+   359                           	
+   360  07E7                     l675:	
+   361                           	line	97
+   362                           	
+   363  07E7                     l2621:	
+   364                           ;Source.c: 97: BooleanFlagsControl();
+   365  07E7  120A  118A  27A3   	fcall	_BooleanFlagsControl
               120A  118A         
-   362                           	line	73
-   363                           	
-   364  07BF                     l2623:	
-   365                           ;Untitled.c: 73: Param6();
-   366  07BF  120A  118A  272B   	fcall	_Param6
+   366                           	line	98
+   367                           	
+   368  07EC                     l2623:	
+   369                           ;Source.c: 98: Param6();
+   370  07EC  120A  118A  2727   	fcall	_Param6
               120A  118A         
-   367                           	line	74
-   368                           	
-   369  07C4                     l2625:	
-   370                           ;Untitled.c: 74: Param11();
-   371  07C4  120A  118A  277E   	fcall	_Param11
+   371                           	line	99
+   372                           	
+   373  07F1                     l2625:	
+   374                           ;Source.c: 99: Param11();
+   375  07F1  120A  118A  277A   	fcall	_Param11
               120A  118A         
-   372                           	line	75
-   373                           	
-   374  07C9                     l2627:	
-   375                           ;Untitled.c: 75: Param21();
-   376  07C9  120A  118A  2746   	fcall	_Param21
+   376                           	line	100
+   377                           	
+   378  07F6                     l2627:	
+   379                           ;Source.c: 100: Param21();
+   380  07F6  120A  118A  2742   	fcall	_Param21
               120A  118A         
-   377  07CE  2FBA               	goto	l2621
-   378                           	line	76
-   379                           	
-   380  07CF                     l676:	
-   381                           	line	71
-   382  07CF  2FBA               	goto	l2621
+   381  07FB  2FE7               	goto	l2621
+   382                           	line	101
    383                           	
-   384  07D0                     l677:	
-   385                           	line	77
-   386                           	
-   387  07D0                     l678:	
-   388                           	global	start
-   389  07D0  120A  118A  2800   	ljmp	start
-   390                           	opt stack 0
-   391                           GLOBAL	__end_of_main
-   392  07D3                     	__end_of_main:
-   393 ;; =============== function _main ends ============
-   394                           
-   395                           	signat	_main,90
-   396                           	global	_Param11
-   397                           psect	text119,local,class=CODE,delta=2
-   398                           global __ptext119
-   399  077E                     __ptext119:
-   400                           
-   401 ;; *************** function _Param11 *****************
-   402 ;; Defined at:
-   403 ;;		line 84 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   404 ;; Parameters:    Size  Location     Type
-   405 ;;		None
-   406 ;; Auto vars:     Size  Location     Type
-   407 ;;		None
-   408 ;; Return value:  Size  Location     Type
-   409 ;;		None               void
-   410 ;; Registers used:
-   411 ;;		wreg, status,2, status,0, pclath, cstack
-   412 ;; Tracked objects:
-   413 ;;		On entry : 0/0
-   414 ;;		On exit  : 0/0
-   415 ;;		Unchanged: 0/0
-   416 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   417 ;;      Params:         0       0       0       0       0
-   418 ;;      Locals:         0       0       0       0       0
-   419 ;;      Temps:          0       0       0       0       0
-   420 ;;      Totals:         0       0       0       0       0
-   421 ;;Total ram usage:        0 bytes
-   422 ;; Hardware stack levels used:    1
-   423 ;; Hardware stack levels required when called:    1
-   424 ;; This function calls:
-   425 ;;		_ButtonOnOF
-   426 ;; This function is called by:
-   427 ;;		_main
-   428 ;; This function uses a non-reentrant model
-   429 ;;
-   430                           psect	text119
-   431                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   432                           	line	84
-   433                           	global	__size_of_Param11
-   434  0029                     	__size_of_Param11	equ	__end_of_Param11-_Param11
-   435                           	
-   436  077E                     _Param11:	
-   437                           	opt	stack 6
-   438                           ; Regs used in _Param11: [wreg+status,2+status,0+pclath+cstack]
-   439                           	line	85
-   440                           	
-   441  077E                     l2603:	
-   442                           ;Untitled.c: 85: if(Param11isAlive){
-   443  077E  0873               	movf	(_Param11isAlive+1),w
-   444  077F  0472               	iorwf	(_Param11isAlive),w
-   445  0780  1903               	skipnz
-   446  0781  2F83               	goto	u2311
-   447  0782  2F84               	goto	u2310
-   448  0783                     u2311:
-   449  0783  2FA6               	goto	l690
-   450  0784                     u2310:
-   451  0784  2F86               	goto	l686
-   452                           	line	86
-   453                           	
-   454  0785                     l2605:	
-   455                           ;Untitled.c: 86: while (! TMR1IF);
-   456  0785  2F86               	goto	l686
+   384  07FC                     l676:	
+   385                           	line	96
+   386  07FC  2FE7               	goto	l2621
+   387                           	
+   388  07FD                     l677:	
+   389                           	line	102
+   390                           	
+   391  07FD                     l678:	
+   392                           	global	start
+   393  07FD  120A  118A  2800   	ljmp	start
+   394                           	opt stack 0
+   395                           GLOBAL	__end_of_main
+   396  0800                     	__end_of_main:
+   397 ;; =============== function _main ends ============
+   398                           
+   399                           	signat	_main,90
+   400                           	global	_Param11
+   401                           psect	text119,local,class=CODE,delta=2
+   402                           global __ptext119
+   403  077A                     __ptext119:
+   404                           
+   405 ;; *************** function _Param11 *****************
+   406 ;; Defined at:
+   407 ;;		line 109 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   408 ;; Parameters:    Size  Location     Type
+   409 ;;		None
+   410 ;; Auto vars:     Size  Location     Type
+   411 ;;		None
+   412 ;; Return value:  Size  Location     Type
+   413 ;;		None               void
+   414 ;; Registers used:
+   415 ;;		wreg, status,2, status,0, pclath, cstack
+   416 ;; Tracked objects:
+   417 ;;		On entry : 0/0
+   418 ;;		On exit  : 0/0
+   419 ;;		Unchanged: 0/0
+   420 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   421 ;;      Params:         0       0       0       0       0
+   422 ;;      Locals:         0       0       0       0       0
+   423 ;;      Temps:          0       0       0       0       0
+   424 ;;      Totals:         0       0       0       0       0
+   425 ;;Total ram usage:        0 bytes
+   426 ;; Hardware stack levels used:    1
+   427 ;; Hardware stack levels required when called:    1
+   428 ;; This function calls:
+   429 ;;		_ButtonOnOF
+   430 ;; This function is called by:
+   431 ;;		_main
+   432 ;; This function uses a non-reentrant model
+   433 ;;
+   434                           psect	text119
+   435                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   436                           	line	109
+   437                           	global	__size_of_Param11
+   438  0029                     	__size_of_Param11	equ	__end_of_Param11-_Param11
+   439                           	
+   440  077A                     _Param11:	
+   441                           	opt	stack 6
+   442                           ; Regs used in _Param11: [wreg+status,2+status,0+pclath+cstack]
+   443                           	line	110
+   444                           	
+   445  077A                     l2603:	
+   446                           ;Source.c: 110: if(Param11isAlive){
+   447  077A  0873               	movf	(_Param11isAlive+1),w
+   448  077B  0472               	iorwf	(_Param11isAlive),w
+   449  077C  1903               	skipnz
+   450  077D  2F7F               	goto	u2311
+   451  077E  2F80               	goto	u2310
+   452  077F                     u2311:
+   453  077F  2FA2               	goto	l690
+   454  0780                     u2310:
+   455  0780  2F82               	goto	l686
+   456                           	line	111
    457                           	
-   458  0786                     l687:	
-   459                           	
-   460  0786                     l686:	
-   461  0786  1283               	bcf	status, 5	;RP0=0, select bank0
-   462  0787  1303               	bcf	status, 6	;RP1=0, select bank0
-   463  0788  1C0C               	btfss	(96/8),(96)&7
-   464  0789  2F8B               	goto	u2321
-   465  078A  2F8C               	goto	u2320
-   466  078B                     u2321:
-   467  078B  2F86               	goto	l686
-   468  078C                     u2320:
-   469                           	
-   470  078C                     l688:	
-   471                           	line	87
-   472                           ;Untitled.c: 87: TMR1IF = 0;
-   473  078C  100C               	bcf	(96/8),(96)&7
-   474                           	line	88
-   475                           	
-   476  078D                     l2607:	
-   477                           ;Untitled.c: 88: Count ++;
-   478  078D  3001               	movlw	low(01h)
-   479  078E  07F0               	addwf	(_Count),f
-   480  078F  1803               	skipnc
-   481  0790  0AF1               	incf	(_Count+1),f
-   482  0791  3000               	movlw	high(01h)
-   483  0792  07F1               	addwf	(_Count+1),f
-   484                           	line	89
-   485                           ;Untitled.c: 89: if (Count == 100)
-   486  0793  3064               	movlw	064h
-   487  0794  0670               	xorwf	(_Count),w
-   488  0795  0471               	iorwf	(_Count+1),w
-   489  0796  1D03               	skipz
-   490  0797  2F99               	goto	u2331
-   491  0798  2F9A               	goto	u2330
-   492  0799                     u2331:
-   493  0799  2FA6               	goto	l690
-   494  079A                     u2330:
-   495                           	line	92
-   496                           	
-   497  079A                     l2609:	
-   498                           ;Untitled.c: 90: {
-   499                           ;Untitled.c: 92: Count = 0;
-   500  079A  01F0               	clrf	(_Count)
-   501  079B  01F1               	clrf	(_Count+1)
-   502                           	line	93
-   503                           	
-   504  079C                     l2611:	
-   505                           ;Untitled.c: 93: ButtonOnOF();
-   506  079C  120A  118A  2758   	fcall	_ButtonOnOF
+   458  0781                     l2605:	
+   459                           ;Source.c: 111: while (! TMR1IF);
+   460  0781  2F82               	goto	l686
+   461                           	
+   462  0782                     l687:	
+   463                           	
+   464  0782                     l686:	
+   465  0782  1283               	bcf	status, 5	;RP0=0, select bank0
+   466  0783  1303               	bcf	status, 6	;RP1=0, select bank0
+   467  0784  1C0C               	btfss	(96/8),(96)&7
+   468  0785  2F87               	goto	u2321
+   469  0786  2F88               	goto	u2320
+   470  0787                     u2321:
+   471  0787  2F82               	goto	l686
+   472  0788                     u2320:
+   473                           	
+   474  0788                     l688:	
+   475                           	line	112
+   476                           ;Source.c: 112: TMR1IF = 0;
+   477  0788  100C               	bcf	(96/8),(96)&7
+   478                           	line	113
+   479                           	
+   480  0789                     l2607:	
+   481                           ;Source.c: 113: Count ++;
+   482  0789  3001               	movlw	low(01h)
+   483  078A  07F0               	addwf	(_Count),f
+   484  078B  1803               	skipnc
+   485  078C  0AF1               	incf	(_Count+1),f
+   486  078D  3000               	movlw	high(01h)
+   487  078E  07F1               	addwf	(_Count+1),f
+   488                           	line	114
+   489                           ;Source.c: 114: if (Count == 100){
+   490  078F  3064               	movlw	064h
+   491  0790  0670               	xorwf	(_Count),w
+   492  0791  0471               	iorwf	(_Count+1),w
+   493  0792  1D03               	skipz
+   494  0793  2F95               	goto	u2331
+   495  0794  2F96               	goto	u2330
+   496  0795                     u2331:
+   497  0795  2FA2               	goto	l690
+   498  0796                     u2330:
+   499                           	line	115
+   500                           	
+   501  0796                     l2609:	
+   502                           ;Source.c: 115: Count = 0;
+   503  0796  01F0               	clrf	(_Count)
+   504  0797  01F1               	clrf	(_Count+1)
+   505                           	line	116
+   506                           	
+   507  0798                     l2611:	
+   508                           ;Source.c: 116: ButtonOnOF();
+   509  0798  120A  118A  2754   	fcall	_ButtonOnOF
               120A  118A         
-   507                           	line	94
-   508                           	
-   509  07A1                     l2613:	
-   510                           ;Untitled.c: 94: TMR1IF = 0;
-   511  07A1  1283               	bcf	status, 5	;RP0=0, select bank0
-   512  07A2  1303               	bcf	status, 6	;RP1=0, select bank0
-   513  07A3  100C               	bcf	(96/8),(96)&7
-   514  07A4  2FA6               	goto	l690
-   515                           	line	95
-   516                           	
-   517  07A5                     l689:	
-   518  07A5  2FA6               	goto	l690
-   519                           	line	96
-   520                           	
-   521  07A6                     l685:	
-   522                           	line	97
+   510                           	line	117
+   511                           	
+   512  079D                     l2613:	
+   513                           ;Source.c: 117: TMR1IF = 0;
+   514  079D  1283               	bcf	status, 5	;RP0=0, select bank0
+   515  079E  1303               	bcf	status, 6	;RP1=0, select bank0
+   516  079F  100C               	bcf	(96/8),(96)&7
+   517  07A0  2FA2               	goto	l690
+   518                           	line	118
+   519                           	
+   520  07A1                     l689:	
+   521  07A1  2FA2               	goto	l690
+   522                           	line	119
    523                           	
-   524  07A6                     l690:	
-   525  07A6  0008               	return
-   526                           	opt stack 0
-   527                           GLOBAL	__end_of_Param11
-   528  07A7                     	__end_of_Param11:
-   529 ;; =============== function _Param11 ends ============
-   530                           
-   531                           	signat	_Param11,88
-   532                           	global	_Param6
-   533                           psect	text120,local,class=CODE,delta=2
-   534                           global __ptext120
-   535  072B                     __ptext120:
-   536                           
-   537 ;; *************** function _Param6 *****************
-   538 ;; Defined at:
-   539 ;;		line 79 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   540 ;; Parameters:    Size  Location     Type
-   541 ;;		None
-   542 ;; Auto vars:     Size  Location     Type
-   543 ;;		None
-   544 ;; Return value:  Size  Location     Type
-   545 ;;		None               void
-   546 ;; Registers used:
-   547 ;;		wreg, status,2, status,0, pclath, cstack
-   548 ;; Tracked objects:
-   549 ;;		On entry : 0/0
-   550 ;;		On exit  : 0/0
-   551 ;;		Unchanged: 0/0
-   552 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   553 ;;      Params:         0       0       0       0       0
-   554 ;;      Locals:         0       0       0       0       0
-   555 ;;      Temps:          0       0       0       0       0
-   556 ;;      Totals:         0       0       0       0       0
-   557 ;;Total ram usage:        0 bytes
-   558 ;; Hardware stack levels used:    1
-   559 ;; Hardware stack levels required when called:    1
-   560 ;; This function calls:
-   561 ;;		_ButtonOnOF
-   562 ;; This function is called by:
-   563 ;;		_main
-   564 ;; This function uses a non-reentrant model
-   565 ;;
-   566                           psect	text120
-   567                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   568                           	line	79
-   569                           	global	__size_of_Param6
-   570  000D                     	__size_of_Param6	equ	__end_of_Param6-_Param6
-   571                           	
-   572  072B                     _Param6:	
-   573                           	opt	stack 6
-   574                           ; Regs used in _Param6: [wreg+status,2+status,0+pclath+cstack]
-   575                           	line	80
-   576                           	
-   577  072B                     l2599:	
-   578                           ;Untitled.c: 80: if(Param6isAlive)
-   579  072B  0875               	movf	(_Param6isAlive+1),w
-   580  072C  0474               	iorwf	(_Param6isAlive),w
-   581  072D  1903               	skipnz
-   582  072E  2F30               	goto	u2301
-   583  072F  2F31               	goto	u2300
-   584  0730                     u2301:
-   585  0730  2F37               	goto	l682
-   586  0731                     u2300:
-   587                           	line	81
-   588                           	
-   589  0731                     l2601:	
-   590                           ;Untitled.c: 81: ButtonOnOF();
-   591  0731  120A  118A  2758   	fcall	_ButtonOnOF
+   524  07A2                     l685:	
+   525                           	line	120
+   526                           	
+   527  07A2                     l690:	
+   528  07A2  0008               	return
+   529                           	opt stack 0
+   530                           GLOBAL	__end_of_Param11
+   531  07A3                     	__end_of_Param11:
+   532 ;; =============== function _Param11 ends ============
+   533                           
+   534                           	signat	_Param11,88
+   535                           	global	_Param6
+   536                           psect	text120,local,class=CODE,delta=2
+   537                           global __ptext120
+   538  0727                     __ptext120:
+   539                           
+   540 ;; *************** function _Param6 *****************
+   541 ;; Defined at:
+   542 ;;		line 104 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   543 ;; Parameters:    Size  Location     Type
+   544 ;;		None
+   545 ;; Auto vars:     Size  Location     Type
+   546 ;;		None
+   547 ;; Return value:  Size  Location     Type
+   548 ;;		None               void
+   549 ;; Registers used:
+   550 ;;		wreg, status,2, status,0, pclath, cstack
+   551 ;; Tracked objects:
+   552 ;;		On entry : 0/0
+   553 ;;		On exit  : 0/0
+   554 ;;		Unchanged: 0/0
+   555 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   556 ;;      Params:         0       0       0       0       0
+   557 ;;      Locals:         0       0       0       0       0
+   558 ;;      Temps:          0       0       0       0       0
+   559 ;;      Totals:         0       0       0       0       0
+   560 ;;Total ram usage:        0 bytes
+   561 ;; Hardware stack levels used:    1
+   562 ;; Hardware stack levels required when called:    1
+   563 ;; This function calls:
+   564 ;;		_ButtonOnOF
+   565 ;; This function is called by:
+   566 ;;		_main
+   567 ;; This function uses a non-reentrant model
+   568 ;;
+   569                           psect	text120
+   570                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   571                           	line	104
+   572                           	global	__size_of_Param6
+   573  000D                     	__size_of_Param6	equ	__end_of_Param6-_Param6
+   574                           	
+   575  0727                     _Param6:	
+   576                           	opt	stack 6
+   577                           ; Regs used in _Param6: [wreg+status,2+status,0+pclath+cstack]
+   578                           	line	105
+   579                           	
+   580  0727                     l2599:	
+   581                           ;Source.c: 105: if(Param6isAlive)
+   582  0727  0875               	movf	(_Param6isAlive+1),w
+   583  0728  0474               	iorwf	(_Param6isAlive),w
+   584  0729  1903               	skipnz
+   585  072A  2F2C               	goto	u2301
+   586  072B  2F2D               	goto	u2300
+   587  072C                     u2301:
+   588  072C  2F33               	goto	l682
+   589  072D                     u2300:
+   590                           	line	106
+   591                           	
+   592  072D                     l2601:	
+   593                           ;Source.c: 106: ButtonOnOF();
+   594  072D  120A  118A  2754   	fcall	_ButtonOnOF
               120A  118A         
-   592  0736  2F37               	goto	l682
-   593                           	
-   594  0737                     l681:	
-   595                           	line	82
+   595  0732  2F33               	goto	l682
    596                           	
-   597  0737                     l682:	
-   598  0737  0008               	return
-   599                           	opt stack 0
-   600                           GLOBAL	__end_of_Param6
-   601  0738                     	__end_of_Param6:
-   602 ;; =============== function _Param6 ends ============
-   603                           
-   604                           	signat	_Param6,88
-   605                           	global	_ButtonOnOF
-   606                           psect	text121,local,class=CODE,delta=2
-   607                           global __ptext121
-   608  0758                     __ptext121:
-   609                           
-   610 ;; *************** function _ButtonOnOF *****************
-   611 ;; Defined at:
-   612 ;;		line 27 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   613 ;; Parameters:    Size  Location     Type
-   614 ;;		None
-   615 ;; Auto vars:     Size  Location     Type
-   616 ;;		None
-   617 ;; Return value:  Size  Location     Type
-   618 ;;                  2  658[COMMON] int 
-   619 ;; Registers used:
-   620 ;;		wreg
-   621 ;; Tracked objects:
-   622 ;;		On entry : 0/0
-   623 ;;		On exit  : 0/0
-   624 ;;		Unchanged: 0/0
-   625 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   626 ;;      Params:         0       0       0       0       0
-   627 ;;      Locals:         0       0       0       0       0
-   628 ;;      Temps:          3       0       0       0       0
-   629 ;;      Totals:         3       0       0       0       0
-   630 ;;Total ram usage:        3 bytes
-   631 ;; Hardware stack levels used:    1
-   632 ;; This function calls:
-   633 ;;		Nothing
-   634 ;; This function is called by:
-   635 ;;		_Param6
-   636 ;;		_Param11
-   637 ;; This function uses a non-reentrant model
-   638 ;;
-   639                           psect	text121
-   640                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   641                           	line	27
-   642                           	global	__size_of_ButtonOnOF
-   643  0026                     	__size_of_ButtonOnOF	equ	__end_of_ButtonOnOF-_ButtonOnOF
-   644                           	
-   645  0758                     _ButtonOnOF:	
-   646                           	opt	stack 6
-   647                           ; Regs used in _ButtonOnOF: [wreg]
-   648                           	line	29
-   649                           	
-   650  0758                     l2589:	
-   651                           ;Untitled.c: 29: if(PORTAbits.RA0 == 0){
-   652  0758  1283               	bcf	status, 5	;RP0=0, select bank0
-   653  0759  1303               	bcf	status, 6	;RP1=0, select bank0
-   654  075A  1805               	btfsc	(5),0	;volatile
-   655  075B  2F5D               	goto	u2271
-   656  075C  2F5E               	goto	u2270
-   657  075D                     u2271:
-   658  075D  2F77               	goto	l659
-   659  075E                     u2270:
-   660                           	line	30
-   661                           	
-   662  075E                     l2591:	
-   663                           ;Untitled.c: 30: if(TimerMode){
-   664  075E  0879               	movf	(_TimerMode+1),w
-   665  075F  0478               	iorwf	(_TimerMode),w
-   666  0760  1903               	skipnz
-   667  0761  2F63               	goto	u2281
-   668  0762  2F64               	goto	u2280
-   669  0763                     u2281:
-   670  0763  2F75               	goto	l660
-   671  0764                     u2280:
-   672                           	line	31
-   673                           	
-   674  0764                     l2593:	
-   675                           ;Untitled.c: 31: _delay((unsigned long)((2000)*(8000000/4000.0)));
-   676                           	opt asmopt_off
-   677  0764  3015               movlw  21
-   678  0765  00FC               movwf	((??_ButtonOnOF+0)+0+2),f
-   679  0766  304B               movlw	75
-   680  0767  00FB               movwf	((??_ButtonOnOF+0)+0+1),f
-   681  0768  30D1               	movlw	209
-   682  0769  00FA               movwf	((??_ButtonOnOF+0)+0),f
-   683  076A                     u2347:
-   684  076A  0BFA               	decfsz	((??_ButtonOnOF+0)+0),f
-   685  076B  2F6A               	goto	u2347
-   686  076C  0BFB               	decfsz	((??_ButtonOnOF+0)+0+1),f
-   687  076D  2F6A               	goto	u2347
-   688  076E  0BFC               	decfsz	((??_ButtonOnOF+0)+0+2),f
-   689  076F  2F6A               	goto	u2347
-   690  0770  0064               	clrwdt
-   691                           opt asmopt_on
-   692                           
-   693                           	line	32
-   694                           	
-   695  0771                     l2595:	
-   696                           ;Untitled.c: 32: PORTBbits.RB0=1;
-   697  0771  1283               	bcf	status, 5	;RP0=0, select bank0
-   698  0772  1303               	bcf	status, 6	;RP1=0, select bank0
-   699  0773  1406               	bsf	(6),0	;volatile
-   700                           	line	33
-   701                           ;Untitled.c: 33: }else PORTBbits.RB0=1;
-   702  0774  2F77               	goto	l659
-   703                           	
-   704  0775                     l660:	
-   705  0775  1406               	bsf	(6),0	;volatile
-   706  0776  2F77               	goto	l659
-   707                           	
-   708  0777                     l661:	
-   709                           	line	34
+   597  0733                     l681:	
+   598                           	line	107
+   599                           	
+   600  0733                     l682:	
+   601  0733  0008               	return
+   602                           	opt stack 0
+   603                           GLOBAL	__end_of_Param6
+   604  0734                     	__end_of_Param6:
+   605 ;; =============== function _Param6 ends ============
+   606                           
+   607                           	signat	_Param6,88
+   608                           	global	_ButtonOnOF
+   609                           psect	text121,local,class=CODE,delta=2
+   610                           global __ptext121
+   611  0754                     __ptext121:
+   612                           
+   613 ;; *************** function _ButtonOnOF *****************
+   614 ;; Defined at:
+   615 ;;		line 37 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   616 ;; Parameters:    Size  Location     Type
+   617 ;;		None
+   618 ;; Auto vars:     Size  Location     Type
+   619 ;;		None
+   620 ;; Return value:  Size  Location     Type
+   621 ;;		None               void
+   622 ;; Registers used:
+   623 ;;		wreg
+   624 ;; Tracked objects:
+   625 ;;		On entry : 0/0
+   626 ;;		On exit  : 0/0
+   627 ;;		Unchanged: 0/0
+   628 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   629 ;;      Params:         0       0       0       0       0
+   630 ;;      Locals:         0       0       0       0       0
+   631 ;;      Temps:          3       0       0       0       0
+   632 ;;      Totals:         3       0       0       0       0
+   633 ;;Total ram usage:        3 bytes
+   634 ;; Hardware stack levels used:    1
+   635 ;; This function calls:
+   636 ;;		Nothing
+   637 ;; This function is called by:
+   638 ;;		_Param6
+   639 ;;		_Param11
+   640 ;; This function uses a non-reentrant model
+   641 ;;
+   642                           psect	text121
+   643                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   644                           	line	37
+   645                           	global	__size_of_ButtonOnOF
+   646  0026                     	__size_of_ButtonOnOF	equ	__end_of_ButtonOnOF-_ButtonOnOF
+   647                           	
+   648  0754                     _ButtonOnOF:	
+   649                           	opt	stack 6
+   650                           ; Regs used in _ButtonOnOF: [wreg]
+   651                           	line	38
+   652                           	
+   653  0754                     l2589:	
+   654                           ;Source.c: 38: if(PORTAbits.RA0 == 0){
+   655  0754  1283               	bcf	status, 5	;RP0=0, select bank0
+   656  0755  1303               	bcf	status, 6	;RP1=0, select bank0
+   657  0756  1805               	btfsc	(5),0	;volatile
+   658  0757  2F59               	goto	u2271
+   659  0758  2F5A               	goto	u2270
+   660  0759                     u2271:
+   661  0759  2F73               	goto	l659
+   662  075A                     u2270:
+   663                           	line	39
+   664                           	
+   665  075A                     l2591:	
+   666                           ;Source.c: 39: if(TimerMode){
+   667  075A  0879               	movf	(_TimerMode+1),w
+   668  075B  0478               	iorwf	(_TimerMode),w
+   669  075C  1903               	skipnz
+   670  075D  2F5F               	goto	u2281
+   671  075E  2F60               	goto	u2280
+   672  075F                     u2281:
+   673  075F  2F71               	goto	l660
+   674  0760                     u2280:
+   675                           	line	40
+   676                           	
+   677  0760                     l2593:	
+   678                           ;Source.c: 40: _delay((unsigned long)((2000)*(8000000/4000.0)));
+   679                           	opt asmopt_off
+   680  0760  3015               movlw  21
+   681  0761  00FC               movwf	((??_ButtonOnOF+0)+0+2),f
+   682  0762  304B               movlw	75
+   683  0763  00FB               movwf	((??_ButtonOnOF+0)+0+1),f
+   684  0764  30D1               	movlw	209
+   685  0765  00FA               movwf	((??_ButtonOnOF+0)+0),f
+   686  0766                     u2347:
+   687  0766  0BFA               	decfsz	((??_ButtonOnOF+0)+0),f
+   688  0767  2F66               	goto	u2347
+   689  0768  0BFB               	decfsz	((??_ButtonOnOF+0)+0+1),f
+   690  0769  2F66               	goto	u2347
+   691  076A  0BFC               	decfsz	((??_ButtonOnOF+0)+0+2),f
+   692  076B  2F66               	goto	u2347
+   693  076C  0064               	clrwdt
+   694                           opt asmopt_on
+   695                           
+   696                           	line	41
+   697                           	
+   698  076D                     l2595:	
+   699                           ;Source.c: 41: PORTBbits.RB0 = 1;
+   700  076D  1283               	bcf	status, 5	;RP0=0, select bank0
+   701  076E  1303               	bcf	status, 6	;RP1=0, select bank0
+   702  076F  1406               	bsf	(6),0	;volatile
+   703                           	line	42
+   704                           ;Source.c: 42: }else PORTBbits.RB0 = 1;
+   705  0770  2F73               	goto	l659
+   706                           	
+   707  0771                     l660:	
+   708  0771  1406               	bsf	(6),0	;volatile
+   709  0772  2F73               	goto	l659
    710                           	
-   711  0777                     l659:	
-   712                           	line	35
-   713                           ;Untitled.c: 34: }
-   714                           ;Untitled.c: 35: if(PORTAbits.RA1 == 0)
-   715  0777  1885               	btfsc	(5),1	;volatile
-   716  0778  2F7A               	goto	u2291
-   717  0779  2F7B               	goto	u2290
-   718  077A                     u2291:
-   719  077A  2F7D               	goto	l663
-   720  077B                     u2290:
-   721                           	line	36
-   722                           	
-   723  077B                     l2597:	
-   724                           ;Untitled.c: 36: PORTBbits.RB0=0;
-   725  077B  1006               	bcf	(6),0	;volatile
-   726  077C  2F7D               	goto	l663
-   727                           	
-   728  077D                     l662:	
-   729                           	line	37
+   711  0773                     l661:	
+   712                           	line	43
+   713                           	
+   714  0773                     l659:	
+   715                           	line	44
+   716                           ;Source.c: 43: }
+   717                           ;Source.c: 44: if(PORTAbits.RA1 == 0)
+   718  0773  1885               	btfsc	(5),1	;volatile
+   719  0774  2F76               	goto	u2291
+   720  0775  2F77               	goto	u2290
+   721  0776                     u2291:
+   722  0776  2F79               	goto	l663
+   723  0777                     u2290:
+   724                           	line	45
+   725                           	
+   726  0777                     l2597:	
+   727                           ;Source.c: 45: PORTBbits.RB0 = 0;
+   728  0777  1006               	bcf	(6),0	;volatile
+   729  0778  2F79               	goto	l663
    730                           	
-   731  077D                     l663:	
-   732  077D  0008               	return
-   733                           	opt stack 0
-   734                           GLOBAL	__end_of_ButtonOnOF
-   735  077E                     	__end_of_ButtonOnOF:
-   736 ;; =============== function _ButtonOnOF ends ============
-   737                           
-   738                           	signat	_ButtonOnOF,90
-   739                           	global	_Param21
-   740                           psect	text122,local,class=CODE,delta=2
-   741                           global __ptext122
-   742  0746                     __ptext122:
-   743                           
-   744 ;; *************** function _Param21 *****************
-   745 ;; Defined at:
-   746 ;;		line 99 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   747 ;; Parameters:    Size  Location     Type
-   748 ;;		None
-   749 ;; Auto vars:     Size  Location     Type
-   750 ;;		None
-   751 ;; Return value:  Size  Location     Type
-   752 ;;		None               void
-   753 ;; Registers used:
-   754 ;;		wreg
-   755 ;; Tracked objects:
-   756 ;;		On entry : 0/0
-   757 ;;		On exit  : 0/0
-   758 ;;		Unchanged: 0/0
-   759 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   760 ;;      Params:         0       0       0       0       0
-   761 ;;      Locals:         0       0       0       0       0
-   762 ;;      Temps:          0       0       0       0       0
-   763 ;;      Totals:         0       0       0       0       0
-   764 ;;Total ram usage:        0 bytes
-   765 ;; Hardware stack levels used:    1
-   766 ;; This function calls:
-   767 ;;		Nothing
-   768 ;; This function is called by:
-   769 ;;		_main
-   770 ;; This function uses a non-reentrant model
-   771 ;;
-   772                           psect	text122
-   773                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   774                           	line	99
-   775                           	global	__size_of_Param21
-   776  0012                     	__size_of_Param21	equ	__end_of_Param21-_Param21
-   777                           	
-   778  0746                     _Param21:	
-   779                           	opt	stack 7
-   780                           ; Regs used in _Param21: [wreg]
-   781                           	line	100
-   782                           	
-   783  0746                     l1725:	
-   784                           ;Untitled.c: 100: if(RelayPowerMode){
-   785  0746  0877               	movf	(_RelayPowerMode+1),w
-   786  0747  0476               	iorwf	(_RelayPowerMode),w
-   787  0748  1903               	skipnz
-   788  0749  2F4B               	goto	u41
-   789  074A  2F4C               	goto	u40
-   790  074B                     u41:
-   791  074B  2F57               	goto	l696
-   792  074C                     u40:
-   793                           	line	101
-   794                           	
-   795  074C                     l1727:	
-   796                           ;Untitled.c: 101: if(PORTAbits.RA4 == 0){
-   797  074C  1283               	bcf	status, 5	;RP0=0, select bank0
-   798  074D  1303               	bcf	status, 6	;RP1=0, select bank0
-   799  074E  1A05               	btfsc	(5),4	;volatile
-   800  074F  2F51               	goto	u51
-   801  0750  2F52               	goto	u50
-   802  0751                     u51:
-   803  0751  2F54               	goto	l694
-   804  0752                     u50:
-   805                           	line	102
-   806                           	
-   807  0752                     l1729:	
-   808                           ;Untitled.c: 102: PORTBbits.RB1 = 1;
-   809  0752  1486               	bsf	(6),1	;volatile
-   810                           	line	103
-   811                           ;Untitled.c: 103: }else PORTBbits.RB1 = 0;
-   812  0753  2F57               	goto	l696
-   813                           	
-   814  0754                     l694:	
-   815  0754  1086               	bcf	(6),1	;volatile
-   816  0755  2F57               	goto	l696
-   817                           	
-   818  0756                     l695:	
-   819  0756  2F57               	goto	l696
-   820                           	line	104
-   821                           	
-   822  0757                     l693:	
-   823                           	line	105
+   731  0779                     l662:	
+   732                           	line	46
+   733                           	
+   734  0779                     l663:	
+   735  0779  0008               	return
+   736                           	opt stack 0
+   737                           GLOBAL	__end_of_ButtonOnOF
+   738  077A                     	__end_of_ButtonOnOF:
+   739 ;; =============== function _ButtonOnOF ends ============
+   740                           
+   741                           	signat	_ButtonOnOF,88
+   742                           	global	_Param21
+   743                           psect	text122,local,class=CODE,delta=2
+   744                           global __ptext122
+   745  0742                     __ptext122:
+   746                           
+   747 ;; *************** function _Param21 *****************
+   748 ;; Defined at:
+   749 ;;		line 122 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   750 ;; Parameters:    Size  Location     Type
+   751 ;;		None
+   752 ;; Auto vars:     Size  Location     Type
+   753 ;;		None
+   754 ;; Return value:  Size  Location     Type
+   755 ;;		None               void
+   756 ;; Registers used:
+   757 ;;		wreg
+   758 ;; Tracked objects:
+   759 ;;		On entry : 0/0
+   760 ;;		On exit  : 0/0
+   761 ;;		Unchanged: 0/0
+   762 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   763 ;;      Params:         0       0       0       0       0
+   764 ;;      Locals:         0       0       0       0       0
+   765 ;;      Temps:          0       0       0       0       0
+   766 ;;      Totals:         0       0       0       0       0
+   767 ;;Total ram usage:        0 bytes
+   768 ;; Hardware stack levels used:    1
+   769 ;; This function calls:
+   770 ;;		Nothing
+   771 ;; This function is called by:
+   772 ;;		_main
+   773 ;; This function uses a non-reentrant model
+   774 ;;
+   775                           psect	text122
+   776                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   777                           	line	122
+   778                           	global	__size_of_Param21
+   779  0012                     	__size_of_Param21	equ	__end_of_Param21-_Param21
+   780                           	
+   781  0742                     _Param21:	
+   782                           	opt	stack 7
+   783                           ; Regs used in _Param21: [wreg]
+   784                           	line	123
+   785                           	
+   786  0742                     l1725:	
+   787                           ;Source.c: 123: if(RelayPowerMode){
+   788  0742  0877               	movf	(_RelayPowerMode+1),w
+   789  0743  0476               	iorwf	(_RelayPowerMode),w
+   790  0744  1903               	skipnz
+   791  0745  2F47               	goto	u41
+   792  0746  2F48               	goto	u40
+   793  0747                     u41:
+   794  0747  2F53               	goto	l696
+   795  0748                     u40:
+   796                           	line	124
+   797                           	
+   798  0748                     l1727:	
+   799                           ;Source.c: 124: if(PORTAbits.RA4 == 0){
+   800  0748  1283               	bcf	status, 5	;RP0=0, select bank0
+   801  0749  1303               	bcf	status, 6	;RP1=0, select bank0
+   802  074A  1A05               	btfsc	(5),4	;volatile
+   803  074B  2F4D               	goto	u51
+   804  074C  2F4E               	goto	u50
+   805  074D                     u51:
+   806  074D  2F50               	goto	l694
+   807  074E                     u50:
+   808                           	line	125
+   809                           	
+   810  074E                     l1729:	
+   811                           ;Source.c: 125: PORTBbits.RB1 = 1;
+   812  074E  1486               	bsf	(6),1	;volatile
+   813                           	line	126
+   814                           ;Source.c: 126: }else PORTBbits.RB1 = 0;
+   815  074F  2F53               	goto	l696
+   816                           	
+   817  0750                     l694:	
+   818  0750  1086               	bcf	(6),1	;volatile
+   819  0751  2F53               	goto	l696
+   820                           	
+   821  0752                     l695:	
+   822  0752  2F53               	goto	l696
+   823                           	line	127
    824                           	
-   825  0757                     l696:	
-   826  0757  0008               	return
-   827                           	opt stack 0
-   828                           GLOBAL	__end_of_Param21
-   829  0758                     	__end_of_Param21:
-   830 ;; =============== function _Param21 ends ============
-   831                           
-   832                           	signat	_Param21,88
-   833                           	global	_BooleanFlagsControl
-   834                           psect	text123,local,class=CODE,delta=2
-   835                           global __ptext123
-   836  07D3                     __ptext123:
-   837                           
-   838 ;; *************** function _BooleanFlagsControl *****************
-   839 ;; Defined at:
-   840 ;;		line 39 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   841 ;; Parameters:    Size  Location     Type
-   842 ;;		None
-   843 ;; Auto vars:     Size  Location     Type
-   844 ;;		None
-   845 ;; Return value:  Size  Location     Type
-   846 ;;		None               void
-   847 ;; Registers used:
-   848 ;;		wreg, status,2
-   849 ;; Tracked objects:
-   850 ;;		On entry : 0/0
-   851 ;;		On exit  : 0/0
-   852 ;;		Unchanged: 0/0
-   853 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   854 ;;      Params:         0       0       0       0       0
-   855 ;;      Locals:         0       0       0       0       0
-   856 ;;      Temps:          0       0       0       0       0
-   857 ;;      Totals:         0       0       0       0       0
-   858 ;;Total ram usage:        0 bytes
-   859 ;; Hardware stack levels used:    1
-   860 ;; This function calls:
-   861 ;;		Nothing
-   862 ;; This function is called by:
-   863 ;;		_main
-   864 ;; This function uses a non-reentrant model
-   865 ;;
-   866                           psect	text123
-   867                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-   868                           	line	39
-   869                           	global	__size_of_BooleanFlagsControl
-   870  002D                     	__size_of_BooleanFlagsControl	equ	__end_of_BooleanFlagsControl-_BooleanFlagsControl
-   871                           	
-   872  07D3                     _BooleanFlagsControl:	
-   873                           	opt	stack 7
-   874                           ; Regs used in _BooleanFlagsControl: [wreg+status,2]
-   875                           	line	40
-   876                           	
-   877  07D3                     l1703:	
-   878                           ;Untitled.c: 40: if(PORTAbits.RA2 == 0){
-   879  07D3  1283               	bcf	status, 5	;RP0=0, select bank0
-   880  07D4  1303               	bcf	status, 6	;RP1=0, select bank0
-   881  07D5  1905               	btfsc	(5),2	;volatile
-   882  07D6  2FD8               	goto	u11
-   883  07D7  2FD9               	goto	u10
-   884  07D8                     u11:
-   885  07D8  2FE0               	goto	l1709
-   886  07D9                     u10:
-   887                           	line	41
-   888                           	
-   889  07D9                     l1705:	
-   890                           ;Untitled.c: 41: Param6isAlive=0;
-   891  07D9  01F4               	clrf	(_Param6isAlive)
-   892  07DA  01F5               	clrf	(_Param6isAlive+1)
-   893                           	line	42
-   894                           	
-   895  07DB                     l1707:	
-   896                           ;Untitled.c: 42: Param11isAlive=1;
-   897  07DB  3001               	movlw	low(01h)
-   898  07DC  00F2               	movwf	(_Param11isAlive)
-   899  07DD  3000               	movlw	high(01h)
-   900  07DE  00F3               	movwf	((_Param11isAlive))+1
-   901                           	line	43
-   902                           ;Untitled.c: 43: }else{
-   903  07DF  2FE7               	goto	l1713
-   904                           	
-   905  07E0                     l666:	
-   906                           	line	44
+   825  0753                     l693:	
+   826                           	line	128
+   827                           	
+   828  0753                     l696:	
+   829  0753  0008               	return
+   830                           	opt stack 0
+   831                           GLOBAL	__end_of_Param21
+   832  0754                     	__end_of_Param21:
+   833 ;; =============== function _Param21 ends ============
+   834                           
+   835                           	signat	_Param21,88
+   836                           	global	_BooleanFlagsControl
+   837                           psect	text123,local,class=CODE,delta=2
+   838                           global __ptext123
+   839  07A3                     __ptext123:
+   840                           
+   841 ;; *************** function _BooleanFlagsControl *****************
+   842 ;; Defined at:
+   843 ;;		line 51 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   844 ;; Parameters:    Size  Location     Type
+   845 ;;		None
+   846 ;; Auto vars:     Size  Location     Type
+   847 ;;		None
+   848 ;; Return value:  Size  Location     Type
+   849 ;;		None               void
+   850 ;; Registers used:
+   851 ;;		wreg, status,2
+   852 ;; Tracked objects:
+   853 ;;		On entry : 0/0
+   854 ;;		On exit  : 0/0
+   855 ;;		Unchanged: 0/0
+   856 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   857 ;;      Params:         0       0       0       0       0
+   858 ;;      Locals:         0       0       0       0       0
+   859 ;;      Temps:          0       0       0       0       0
+   860 ;;      Totals:         0       0       0       0       0
+   861 ;;Total ram usage:        0 bytes
+   862 ;; Hardware stack levels used:    1
+   863 ;; This function calls:
+   864 ;;		Nothing
+   865 ;; This function is called by:
+   866 ;;		_main
+   867 ;; This function uses a non-reentrant model
+   868 ;;
+   869                           psect	text123
+   870                           	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+   871                           	line	51
+   872                           	global	__size_of_BooleanFlagsControl
+   873  002D                     	__size_of_BooleanFlagsControl	equ	__end_of_BooleanFlagsControl-_BooleanFlagsControl
+   874                           	
+   875  07A3                     _BooleanFlagsControl:	
+   876                           	opt	stack 7
+   877                           ; Regs used in _BooleanFlagsControl: [wreg+status,2]
+   878                           	line	52
+   879                           	
+   880  07A3                     l1703:	
+   881                           ;Source.c: 52: if(PORTAbits.RA2 == 0){
+   882  07A3  1283               	bcf	status, 5	;RP0=0, select bank0
+   883  07A4  1303               	bcf	status, 6	;RP1=0, select bank0
+   884  07A5  1905               	btfsc	(5),2	;volatile
+   885  07A6  2FA8               	goto	u11
+   886  07A7  2FA9               	goto	u10
+   887  07A8                     u11:
+   888  07A8  2FB0               	goto	l1709
+   889  07A9                     u10:
+   890                           	line	53
+   891                           	
+   892  07A9                     l1705:	
+   893                           ;Source.c: 53: Param6isAlive=0;
+   894  07A9  01F4               	clrf	(_Param6isAlive)
+   895  07AA  01F5               	clrf	(_Param6isAlive+1)
+   896                           	line	54
+   897                           	
+   898  07AB                     l1707:	
+   899                           ;Source.c: 54: Param11isAlive=1;
+   900  07AB  3001               	movlw	low(01h)
+   901  07AC  00F2               	movwf	(_Param11isAlive)
+   902  07AD  3000               	movlw	high(01h)
+   903  07AE  00F3               	movwf	((_Param11isAlive))+1
+   904                           	line	55
+   905                           ;Source.c: 55: }else{
+   906  07AF  2FB7               	goto	l1713
    907                           	
-   908  07E0                     l1709:	
-   909                           ;Untitled.c: 44: Param6isAlive=1;
-   910  07E0  3001               	movlw	low(01h)
-   911  07E1  00F4               	movwf	(_Param6isAlive)
-   912  07E2  3000               	movlw	high(01h)
-   913  07E3  00F5               	movwf	((_Param6isAlive))+1
-   914                           	line	45
-   915                           	
-   916  07E4                     l1711:	
-   917                           ;Untitled.c: 45: Param11isAlive=0;
-   918  07E4  01F2               	clrf	(_Param11isAlive)
-   919  07E5  01F3               	clrf	(_Param11isAlive+1)
-   920  07E6  2FE7               	goto	l1713
-   921                           	line	46
-   922                           	
-   923  07E7                     l667:	
-   924                           	line	47
+   908  07B0                     l666:	
+   909                           	line	56
+   910                           	
+   911  07B0                     l1709:	
+   912                           ;Source.c: 56: Param6isAlive=1;
+   913  07B0  3001               	movlw	low(01h)
+   914  07B1  00F4               	movwf	(_Param6isAlive)
+   915  07B2  3000               	movlw	high(01h)
+   916  07B3  00F5               	movwf	((_Param6isAlive))+1
+   917                           	line	57
+   918                           	
+   919  07B4                     l1711:	
+   920                           ;Source.c: 57: Param11isAlive=0;
+   921  07B4  01F2               	clrf	(_Param11isAlive)
+   922  07B5  01F3               	clrf	(_Param11isAlive+1)
+   923  07B6  2FB7               	goto	l1713
+   924                           	line	58
    925                           	
-   926  07E7                     l1713:	
-   927                           ;Untitled.c: 46: }
-   928                           ;Untitled.c: 47: if(PORTAbits.RA3 == 0)
-   929  07E7  1985               	btfsc	(5),3	;volatile
-   930  07E8  2FEA               	goto	u21
-   931  07E9  2FEB               	goto	u20
-   932  07EA                     u21:
-   933  07EA  2FF0               	goto	l1717
-   934  07EB                     u20:
-   935                           	line	48
-   936                           	
-   937  07EB                     l1715:	
-   938                           ;Untitled.c: 48: TimerMode=1;
-   939  07EB  3001               	movlw	low(01h)
-   940  07EC  00F8               	movwf	(_TimerMode)
-   941  07ED  3000               	movlw	high(01h)
-   942  07EE  00F9               	movwf	((_TimerMode))+1
-   943  07EF  2FF3               	goto	l1719
-   944                           	line	49
-   945                           	
-   946  07F0                     l668:	
-   947                           	
-   948  07F0                     l1717:	
-   949                           ;Untitled.c: 49: else TimerMode=0;
-   950  07F0  01F8               	clrf	(_TimerMode)
-   951  07F1  01F9               	clrf	(_TimerMode+1)
-   952  07F2  2FF3               	goto	l1719
-   953                           	
-   954  07F3                     l669:	
-   955                           	line	50
+   926  07B7                     l667:	
+   927                           	line	59
+   928                           	
+   929  07B7                     l1713:	
+   930                           ;Source.c: 58: }
+   931                           ;Source.c: 59: if(PORTAbits.RA3 == 0)
+   932  07B7  1985               	btfsc	(5),3	;volatile
+   933  07B8  2FBA               	goto	u21
+   934  07B9  2FBB               	goto	u20
+   935  07BA                     u21:
+   936  07BA  2FC0               	goto	l1717
+   937  07BB                     u20:
+   938                           	line	60
+   939                           	
+   940  07BB                     l1715:	
+   941                           ;Source.c: 60: TimerMode=1;
+   942  07BB  3001               	movlw	low(01h)
+   943  07BC  00F8               	movwf	(_TimerMode)
+   944  07BD  3000               	movlw	high(01h)
+   945  07BE  00F9               	movwf	((_TimerMode))+1
+   946  07BF  2FC3               	goto	l1719
+   947                           	line	61
+   948                           	
+   949  07C0                     l668:	
+   950                           	
+   951  07C0                     l1717:	
+   952                           ;Source.c: 61: else TimerMode=0;
+   953  07C0  01F8               	clrf	(_TimerMode)
+   954  07C1  01F9               	clrf	(_TimerMode+1)
+   955  07C2  2FC3               	goto	l1719
    956                           	
-   957  07F3                     l1719:	
-   958                           ;Untitled.c: 50: if(PORTAbits.RA4 == 0)
-   959  07F3  1A05               	btfsc	(5),4	;volatile
-   960  07F4  2FF6               	goto	u31
-   961  07F5  2FF7               	goto	u30
-   962  07F6                     u31:
-   963  07F6  2FFC               	goto	l1723
-   964  07F7                     u30:
-   965                           	line	51
-   966                           	
-   967  07F7                     l1721:	
-   968                           ;Untitled.c: 51: RelayPowerMode=1;
-   969  07F7  3001               	movlw	low(01h)
-   970  07F8  00F6               	movwf	(_RelayPowerMode)
-   971  07F9  3000               	movlw	high(01h)
-   972  07FA  00F7               	movwf	((_RelayPowerMode))+1
-   973  07FB  2FFF               	goto	l672
-   974                           	line	52
-   975                           	
-   976  07FC                     l670:	
-   977                           	
-   978  07FC                     l1723:	
-   979                           ;Untitled.c: 52: else RelayPowerMode=0;
-   980  07FC  01F6               	clrf	(_RelayPowerMode)
-   981  07FD  01F7               	clrf	(_RelayPowerMode+1)
-   982  07FE  2FFF               	goto	l672
-   983                           	
-   984  07FF                     l671:	
-   985                           	line	53
+   957  07C3                     l669:	
+   958                           	line	62
+   959                           	
+   960  07C3                     l1719:	
+   961                           ;Source.c: 62: if(PORTAbits.RA4 == 0)
+   962  07C3  1A05               	btfsc	(5),4	;volatile
+   963  07C4  2FC6               	goto	u31
+   964  07C5  2FC7               	goto	u30
+   965  07C6                     u31:
+   966  07C6  2FCC               	goto	l1723
+   967  07C7                     u30:
+   968                           	line	63
+   969                           	
+   970  07C7                     l1721:	
+   971                           ;Source.c: 63: RelayPowerMode=1;
+   972  07C7  3001               	movlw	low(01h)
+   973  07C8  00F6               	movwf	(_RelayPowerMode)
+   974  07C9  3000               	movlw	high(01h)
+   975  07CA  00F7               	movwf	((_RelayPowerMode))+1
+   976  07CB  2FCF               	goto	l672
+   977                           	line	64
+   978                           	
+   979  07CC                     l670:	
+   980                           	
+   981  07CC                     l1723:	
+   982                           ;Source.c: 64: else RelayPowerMode=0;
+   983  07CC  01F6               	clrf	(_RelayPowerMode)
+   984  07CD  01F7               	clrf	(_RelayPowerMode+1)
+   985  07CE  2FCF               	goto	l672
    986                           	
-   987  07FF                     l672:	
-   988  07FF  0008               	return
-   989                           	opt stack 0
-   990                           GLOBAL	__end_of_BooleanFlagsControl
-   991  0800                     	__end_of_BooleanFlagsControl:
-   992 ;; =============== function _BooleanFlagsControl ends ============
-   993                           
-   994                           	signat	_BooleanFlagsControl,88
-   995                           psect	text124,local,class=CODE,delta=2
-   996                           global __ptext124
-   997  0000                     __ptext124:
-   998                           	global	btemp
-   999  007E                     	btemp set 07Eh
-  1000                           
-  1001                           	DABS	1,126,2	;btemp
-  1002                           	global	wtemp0
-  1003  007E                     	wtemp0 set btemp
+   987  07CF                     l671:	
+   988                           	line	65
+   989                           	
+   990  07CF                     l672:	
+   991  07CF  0008               	return
+   992                           	opt stack 0
+   993                           GLOBAL	__end_of_BooleanFlagsControl
+   994  07D0                     	__end_of_BooleanFlagsControl:
+   995 ;; =============== function _BooleanFlagsControl ends ============
+   996                           
+   997                           	signat	_BooleanFlagsControl,88
+   998                           psect	text124,local,class=CODE,delta=2
+   999                           global __ptext124
+  1000  0000                     __ptext124:
+  1001                           	global	btemp
+  1002  007E                     	btemp set 07Eh
+  1003                           
+  1004                           	DABS	1,126,2	;btemp
+  1005                           	global	wtemp0
+  1006  007E                     	wtemp0 set btemp
 
 
 HI-TECH Software PICC Macro Assembler V9.82 build 9453 
-Symbol Table                                                                                   Sun Nov 12 16:43:29 2017
+Symbol Table                                                                                   Sun Nov 12 17:06:25 2017
 
-                          _RD 0C60                            u10 07D9                            u11 07D8  
-                          u20 07EB                            u21 07EA                            u30 07F7  
-                          u31 07F6                            u40 074C                            u41 074B  
-                          u50 0752                            u51 0751                            _WR 0C61  
-                         l660 0775                           l661 0777                           l670 07FC  
-                         l662 077D                           l671 07FF                           l663 077D  
-                         l672 07FF                           l681 0737                           l666 07E0  
-                         l682 0737                           l690 07A6                           l667 07E7  
-                         l659 0777                           l675 07BA                           l668 07F0  
-                         l676 07CF                           l669 07F3                           l693 0757  
-                         l685 07A6                           l677 07D0                           l694 0754  
-                         l686 0786                           l678 07D0                           l695 0756  
-                         l687 0786                           l696 0757                           l688 078C  
-                         l689 07A5                           _GIE 005F                          l1711 07E4  
-                        l1703 07D3                          l1721 07F7                          l1713 07E7  
-                        l1705 07D9                          l2601 0731                          l1723 07FC  
-                        l1715 07EB                          l1707 07DB                          l2611 079C  
-                        l2603 077E                          l1717 07F0                          l1709 07E0  
-                        l1725 0746                          l2613 07A1                          l2605 0785  
-                        l2621 07BA                          l1719 07F3                          l1727 074C  
-                        l2607 078D                          l2623 07BF                          l2615 07A7  
-                        l1729 0752                          l2609 079A                          l2625 07C4  
-                        l2617 07AD                          l2627 07C9                          l2619 07B0  
-                        l2591 075E                          l2593 0764                          l2595 0771  
-                        l2597 077B                          l2589 0758                          l2599 072B  
-                        u2300 0731                          u2301 0730                          u2310 0784  
-                        u2311 0783                          u2320 078C                          u2321 078B  
-                        u2330 079A                          u2331 0799                          u2270 075E  
-                        u2271 075D                          u2280 0764                          u2281 0763  
-                        u2290 077B                          u2291 077A                          u2347 076A  
-                        _WREN 0C62                          _main 07A7                          btemp 007E  
-                        start 0000               __end_of_Param11 07A7               __end_of_Param21 0758  
+                          _RD 0C60                            u10 07A9                            u11 07A8  
+                          u20 07BB                            u21 07BA                            u30 07C7  
+                          u31 07C6                            u40 0748                            u41 0747  
+                          u50 074E                            u51 074D                            _WR 0C61  
+                         l660 0771                           l661 0773                           l670 07CC  
+                         l662 0779                           l671 07CF                           l663 0779  
+                         l672 07CF                           l681 0733                           l666 07B0  
+                         l682 0733                           l690 07A2                           l667 07B7  
+                         l659 0773                           l675 07E7                           l668 07C0  
+                         l676 07FC                           l669 07C3                           l693 0753  
+                         l685 07A2                           l677 07FD                           l694 0750  
+                         l686 0782                           l678 07FD                           l695 0752  
+                         l687 0782                           l696 0753                           l688 0788  
+                         l689 07A1                           _GIE 005F                          l1711 07B4  
+                        l1703 07A3                          l1721 07C7                          l1713 07B7  
+                        l1705 07A9                          l2601 072D                          l1723 07CC  
+                        l1715 07BB                          l1707 07AB                          l2611 0798  
+                        l2603 077A                          l1717 07C0                          l1709 07B0  
+                        l1725 0742                          l2613 079D                          l2605 0781  
+                        l2621 07E7                          l1719 07C3                          l1727 0748  
+                        l2607 0789                          l2623 07EC                          l2615 07D0  
+                        l1729 074E                          l2609 0796                          l2625 07F1  
+                        l2617 07DC                          l2627 07F6                          l2619 07DF  
+                        l2591 075A                          l2593 0760                          l2595 076D  
+                        l2597 0777                          l2589 0754                          l2599 0727  
+                        u2300 072D                          u2301 072C                          u2310 0780  
+                        u2311 077F                          u2320 0788                          u2321 0787  
+                        u2330 0796                          u2331 0795                          u2270 075A  
+                        u2271 0759                          u2280 0760                          u2281 075F  
+                        u2290 0777                          u2291 0776                          u2347 0766  
+                        _WREN 0C62                          _main 07D0                          btemp 007E  
+                        start 0000               __end_of_Param11 07A3               __end_of_Param21 0754  
               _Param11isAlive 0072                         ?_main 007A                         _EEADR 010D  
                        _CARRY 0018                         _T1CON 0010                         _PORTA 0005  
                        _PORTB 0006                         _TRISA 0085                         _TRISB 0086  
                        _Count 0070                 _Param6isAlive 0074                         status 0003  
-                       wtemp0 007E                  __end_of_main 07D3                    _ButtonOnOF 0758  
+                       wtemp0 007E                  __end_of_main 0800                    _ButtonOnOF 0754  
                       ??_main 007D                        _ADCON1 009F                        _EEDATA 010C  
                       _EECON1 018C                        _EECON2 018D                        _TMR1IF 0060  
-                   ??_Param11 007D                     ??_Param21 007A                        _Param6 072B  
+                   ??_Param11 007D                     ??_Param21 007A                        _Param6 0727  
 __size_of_BooleanFlagsControl 002D                __pcstackCOMMON 007A                   ?_ButtonOnOF 007A  
-                     ?_Param6 007A                    __pmaintext 07A7           __size_of_ButtonOnOF 0026  
-                     _Param11 077E                       _Param21 0746               __size_of_Param6 000D  
-        end_of_initialization 0742           _BooleanFlagsControl 07D3                     _PORTAbits 0005  
-                   _PORTBbits 0006          ?_BooleanFlagsControl 007A                __end_of_Param6 0738  
-                ??_ButtonOnOF 007A         ??_BooleanFlagsControl 007A           start_initialization 0738  
-          __end_of_ButtonOnOF 077E                      ??_Param6 007D                     _TimerMode 0078  
+                     ?_Param6 007A                    __pmaintext 07D0           __size_of_ButtonOnOF 0026  
+                     _Param11 077A                       _Param21 0742               __size_of_Param6 000D  
+        end_of_initialization 073E           _BooleanFlagsControl 07A3                     _PORTAbits 0005  
+                   _PORTBbits 0006          ?_BooleanFlagsControl 007A                __end_of_Param6 0734  
+                ??_ButtonOnOF 007A         ??_BooleanFlagsControl 007A           start_initialization 0734  
+          __end_of_ButtonOnOF 077A                      ??_Param6 007D                     _TimerMode 0078  
                  __pbssCOMMON 0070                      ?_Param11 007A                      ?_Param21 007A  
-                   __ptext120 072B                     __ptext121 0758                     __ptext122 0746  
-                   __ptext123 07D3                     __ptext124 0000                     __ptext118 0000  
-                   __ptext119 077E              __size_of_Param11 0029              __size_of_Param21 0012  
-              _RelayPowerMode 0076                 __size_of_main 002C   __end_of_BooleanFlagsControl 0800  
+                   __ptext120 0727                     __ptext121 0754                     __ptext122 0742  
+                   __ptext123 07A3                     __ptext124 0000                     __ptext118 0000  
+                   __ptext119 077A              __size_of_Param11 0029              __size_of_Param21 0012  
+              _RelayPowerMode 0076                 __size_of_main 0030   __end_of_BooleanFlagsControl 07D0  

@@ -1,7 +1,7 @@
-_BooleanFlagsControl: CODE, 2003 0 45
-_main: CODE, 1959 0 44
-_ButtonOnOF: CODE, 1880 0 38
-_Param11: CODE, 1918 0 41
-_Param6: CODE, 1835 0 13
-_Param21: CODE, 1862 0 18
-Total: 199
+_BooleanFlagsControl: CODE, 1955 0 45
+_main: CODE, 2000 0 48
+_ButtonOnOF: CODE, 1876 0 38
+_Param11: CODE, 1914 0 41
+_Param6: CODE, 1831 0 13
+_Param21: CODE, 1858 0 18
+Total: 203

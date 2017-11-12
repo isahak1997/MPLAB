@@ -24,28 +24,28 @@ Machine type is 16F877
 
                 Name                               Link     Load   Length Selector   Space Scale
 startup.obj     end_init                              0        0        3        0       0
-Example.obj     text123                             7D3      7D3       2D      FA6       0
-                text122                             746      746       12      E8C       0
-                text121                             758      758       26      EB0       0
-                text120                             72B      72B        D      E56       0
-                text119                             77E      77E       29      EFC       0
-                maintext                            7A7      7A7       2C      F4E       0
+Example.obj     text123                             7A3      7A3       2D      F46       0
+                text122                             742      742       12      E84       0
+                text121                             754      754       26      EA8       0
+                text120                             727      727        D      E4E       0
+                text119                             77A      77A       29      EF4       0
+                maintext                            7D0      7D0       30      FA0       0
                 cstackCOMMON                         7A       7A        3       70       1
                 bssCOMMON                            70       70        A       70       1
-                cinit                               738      738        E      E70       0
+                cinit                               734      734        E      E68       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CONST          
 
         CLASS   CODE           
                 end_init                              0        0        3         0
-                text123                             7D3      7D3       2D         0
-                text122                             746      746       12         0
-                text121                             758      758       26         0
-                text120                             72B      72B        D         0
-                text119                             77E      77E       29         0
-                maintext                            7A7      7A7       2C         0
-                cinit                               738      738        E         0
+                text123                             7A3      7A3       2D         0
+                text122                             742      742       12         0
+                text121                             754      754       26         0
+                text120                             727      727        D         0
+                text119                             77A      77A       29         0
+                maintext                            7D0      7D0       30         0
+                cinit                               734      734        E         0
 
         CLASS   STRCODE        
 
@@ -90,13 +90,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 bssCOMMON                      000070  00000D  00007D        70       1  COMMON      1
-                text120                        00072B  00000D  000738       E56       0  CODE        2
-                cinit                          000738  00000E  000746       E70       0  CODE        2
-                text122                        000746  000012  000758       E8C       0  CODE        2
-                text121                        000758  000026  00077E       EB0       0  CODE        2
-                text119                        00077E  000029  0007A7       EFC       0  CODE        2
-                maintext                       0007A7  00002C  0007D3       F4E       0  CODE        2
-                text123                        0007D3  00002D  000800       FA6       0  CODE        2
+                text120                        000727  00000D  000734       E4E       0  CODE        2
+                cinit                          000734  00000E  000742       E68       0  CODE        2
+                text122                        000742  000012  000754       E84       0  CODE        2
+                text121                        000754  000026  00077A       EA8       0  CODE        2
+                text119                        00077A  000029  0007A3       EF4       0  CODE        2
+                text123                        0007A3  00002D  0007D0       F46       0  CODE        2
+                maintext                       0007D0  000030  000800       FA0       0  CODE        2
 
 
 UNUSED ADDRESS RANGES
@@ -106,14 +106,14 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-072A            728           2
+        CODE             0003-0726            724           2
                          0800-1FFF            800
         COMMON           007D-007D              1           1
         CONFIG           2007-2007              1           2
-        CONST            0003-072A            100           2
+        CONST            0003-0726            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-072A            100           2
+        ENTRY            0003-0726            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
@@ -124,9 +124,9 @@ UNUSED ADDRESS RANGES
         SFR1             0080-009F             20           1
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
-        STRCODE          0003-072A            728           2
+        STRCODE          0003-0726            724           2
                          0800-1FFF           1800
-        STRING           0003-072A            100           2
+        STRING           0003-0726            100           2
                          0800-1FFF            100
 
                                   Symbol Table
@@ -144,8 +144,8 @@ UNUSED ADDRESS RANGES
 ?_Param6                      cstackCOMMON 007A
 ?_main                        cstackCOMMON 007A
 _ADCON1                       (abs)        009F
-_BooleanFlagsControl          text123      07D3
-_ButtonOnOF                   text121      0758
+_BooleanFlagsControl          text123      07A3
+_ButtonOnOF                   text121      0754
 _CARRY                        (abs)        0018
 _Count                        bssCOMMON    0070
 _EEADR                        (abs)        010D
@@ -157,10 +157,10 @@ _PORTA                        (abs)        0005
 _PORTAbits                    (abs)        0005
 _PORTB                        (abs)        0006
 _PORTBbits                    (abs)        0006
-_Param11                      text119      077E
+_Param11                      text119      077A
 _Param11isAlive               bssCOMMON    0072
-_Param21                      text122      0746
-_Param6                       text120      072B
+_Param21                      text122      0742
+_Param6                       text120      0727
 _Param6isAlive                bssCOMMON    0074
 _RD                           (abs)        0C60
 _RelayPowerMode               bssCOMMON    0076
@@ -230,21 +230,21 @@ __Ltext                       text         0000
 __S0                          (abs)        0800
 __S1                          (abs)        007D
 __S2                          (abs)        0000
-__end_of_BooleanFlagsControl  text123      0800
-__end_of_ButtonOnOF           text121      077E
-__end_of_Param11              text119      07A7
-__end_of_Param21              text122      0758
-__end_of_Param6               text120      0738
-__end_of_main                 maintext     07D3
+__end_of_BooleanFlagsControl  text123      07D0
+__end_of_ButtonOnOF           text121      077A
+__end_of_Param11              text119      07A3
+__end_of_Param21              text122      0754
+__end_of_Param6               text120      0734
+__end_of_main                 maintext     0800
 __pbssCOMMON                  bssCOMMON    0070
 __pcstackCOMMON               cstackCOMMON 007A
-__pmaintext                   maintext     07A7
+__pmaintext                   maintext     07D0
 __ptext118                    text118      0000
-__ptext119                    text119      077E
-__ptext120                    text120      072B
-__ptext121                    text121      0758
-__ptext122                    text122      0746
-__ptext123                    text123      07D3
+__ptext119                    text119      077A
+__ptext120                    text120      0727
+__ptext121                    text121      0754
+__ptext122                    text122      0742
+__ptext123                    text123      07A3
 __ptext124                    text124      0000
 __size_of_BooleanFlagsControl (abs)        0000
 __size_of_ButtonOnOF          (abs)        0000
@@ -253,9 +253,9 @@ __size_of_Param21             (abs)        0000
 __size_of_Param6              (abs)        0000
 __size_of_main                (abs)        0000
 _exit                         init         0000
-_main                         maintext     07A7
+_main                         maintext     07D0
 btemp                         (abs)        007E
-end_of_initialization         cinit        0742
+end_of_initialization         cinit        073E
 intlevel0                     functab      0000
 intlevel1                     functab      0000
 intlevel2                     functab      0000
@@ -264,5 +264,5 @@ intlevel4                     functab      0000
 intlevel5                     functab      0000
 reset_vec                     reset_vec    0000
 start                         init         0000
-start_initialization          cinit        0738
+start_initialization          cinit        0734
 wtemp0                        (abs)        007E

@@ -497,17 +497,17 @@
 [v ___tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\HI-TECH Software\PICC\9.82\sources\wmul.c
 [v ___wmul `(ui  1 e 2 0 ]
-"27 C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c
-[v _ButtonOnOF `(i  1 s 2 ButtonOnOF ]
-"39
+"37 C:\Users\Isahak\Desktop\MPLAB-master\Source.c
+[v _ButtonOnOF `(v  1 s 0 ButtonOnOF ]
+"51
 [v _BooleanFlagsControl `(v  1 s 0 BooleanFlagsControl ]
-"61
+"85
 [v _main `(i  1 e 2 0 ]
-"79
+"104
 [v _Param6 `(v  1 s 0 Param6 ]
-"84
+"109
 [v _Param11 `(v  1 s 0 Param11 ]
-"99
+"122
 [v _Param21 `(v  1 s 0 Param21 ]
 "7 eeprom.c
 [v _eecpymem `(v  1 e 0 0 ]
@@ -1175,43 +1175,43 @@
 [v _EEADRHbits `VES192  1 e 1 @271 ]
 "1100
 [v _EECON1bits `VES1136  1 e 1 @396 ]
-"20 C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c
+"20 C:\Users\Isahak\Desktop\MPLAB-master\Source.c
 [v _Param6isAlive `i  1 s 2 Param6isAlive ]
-"21
-[v _Param11isAlive `i  1 s 2 Param11isAlive ]
-"22
-[v _TimerMode `i  1 s 2 TimerMode ]
 "23
+[v _Param11isAlive `i  1 s 2 Param11isAlive ]
+"26
+[v _TimerMode `i  1 s 2 TimerMode ]
+"29
 [v _RelayPowerMode `i  1 s 2 RelayPowerMode ]
-"25
+"32
 [v _Count `i  1 s 2 Count ]
-"61
+"85
 [v _main `(i  1 e 2 0 ]
 {
-"77
+"102
 } 0
-"84
+"109
 [v _Param11 `(v  1 s 0 Param11 ]
 {
-"97
+"120
 } 0
-"79
+"104
 [v _Param6 `(v  1 s 0 Param6 ]
 {
-"82
+"107
 } 0
-"27
-[v _ButtonOnOF `(i  1 s 2 ButtonOnOF ]
-{
 "37
+[v _ButtonOnOF `(v  1 s 0 ButtonOnOF ]
+{
+"46
 } 0
-"99
+"122
 [v _Param21 `(v  1 s 0 Param21 ]
 {
-"105
+"128
 } 0
-"39
+"51
 [v _BooleanFlagsControl `(v  1 s 0 BooleanFlagsControl ]
 {
-"53
+"65
 } 0

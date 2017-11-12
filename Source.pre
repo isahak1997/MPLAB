@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+# 1 "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.82\include\pic16f877.h"
 volatile unsigned char INDF @ 0x000;
@@ -1027,7 +1027,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 20 "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+# 20 "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 static int Param6isAlive;
 
 

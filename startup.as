@@ -8,7 +8,7 @@
 	; Compiler options:
 	;
 	; -oExample.cof -mExample.map --summary=default --output=default \
-	; Untitled.p1 --chip=16F877 -P --runtime=default --opt=default \
+	; Source.p1 --chip=16F877 -P --runtime=default --opt=default \
 	; -D__DEBUG=1 --rom=default --ram=default -g --asmlist \
 	; --errformat=Error   [%n] %f; %l.%c %s --msgformat=Advisory[%n] %s \
 	; --warnformat=Warning [%n] %f; %l.%c %s

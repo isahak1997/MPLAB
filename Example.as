@@ -145,14 +145,14 @@ __pcstackCOMMON:
 ?_Param21:	; 0 bytes @ 0x0
 	global	??_Param21
 ??_Param21:	; 0 bytes @ 0x0
+	global	?_ButtonOnOF
+?_ButtonOnOF:	; 0 bytes @ 0x0
 	global	??_ButtonOnOF
 ??_ButtonOnOF:	; 0 bytes @ 0x0
 	global	?_BooleanFlagsControl
 ?_BooleanFlagsControl:	; 0 bytes @ 0x0
 	global	??_BooleanFlagsControl
 ??_BooleanFlagsControl:	; 0 bytes @ 0x0
-	global	?_ButtonOnOF
-?_ButtonOnOF:	; 2 bytes @ 0x0
 	global	?_main
 ?_main:	; 2 bytes @ 0x0
 	ds	3
@@ -275,7 +275,7 @@ __pmaintext:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 61 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+;;		line 85 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -305,84 +305,88 @@ __pmaintext:
 ;; This function uses a non-reentrant model
 ;;
 psect	maintext
-	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-	line	61
+	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+	line	85
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
 _main:	
 	opt	stack 6
 ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-	line	63
+	line	87
 	
 l2615:	
-;Untitled.c: 63: ADCON1 = 7;
+;Source.c: 87: ADCON1 = 7;
 	movlw	(07h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(159)^080h	;volatile
-	line	64
-;Untitled.c: 64: TRISB = 0b11111100;
+	line	88
+;Source.c: 88: T1CON = 1;
+	movlw	(01h)
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	movwf	(16)	;volatile
+	line	90
+;Source.c: 90: TRISB = 0b11111100;
 	movlw	(0FCh)
+	bsf	status, 5	;RP0=1, select bank1
+	bcf	status, 6	;RP1=0, select bank1
 	movwf	(134)^080h	;volatile
-	line	65
+	line	91
 	
 l2617:	
-;Untitled.c: 65: PORTB=0;
+;Source.c: 91: PORTB=0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(6)	;volatile
-	line	67
+	line	93
 	
 l2619:	
-;Untitled.c: 67: TRISA = 0b00000000;
+;Source.c: 93: TRISA = 0b00000000;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(133)^080h	;volatile
-	line	68
-;Untitled.c: 68: PORTA = 0b11111111;
+	line	94
+;Source.c: 94: PORTA = 0b11111111;
 	movlw	(0FFh)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(5)	;volatile
-	line	69
-;Untitled.c: 69: T1CON = 1;
-	movlw	(01h)
-	movwf	(16)	;volatile
 	goto	l2621
-	line	71
-;Untitled.c: 71: while(1){
+	line	96
+;Source.c: 96: while(1){
 	
 l675:	
-	line	72
+	line	97
 	
 l2621:	
-;Untitled.c: 72: BooleanFlagsControl();
+;Source.c: 97: BooleanFlagsControl();
 	fcall	_BooleanFlagsControl
-	line	73
+	line	98
 	
 l2623:	
-;Untitled.c: 73: Param6();
+;Source.c: 98: Param6();
 	fcall	_Param6
-	line	74
+	line	99
 	
 l2625:	
-;Untitled.c: 74: Param11();
+;Source.c: 99: Param11();
 	fcall	_Param11
-	line	75
+	line	100
 	
 l2627:	
-;Untitled.c: 75: Param21();
+;Source.c: 100: Param21();
 	fcall	_Param21
 	goto	l2621
-	line	76
+	line	101
 	
 l676:	
-	line	71
+	line	96
 	goto	l2621
 	
 l677:	
-	line	77
+	line	102
 	
 l678:	
 	global	start
@@ -400,7 +404,7 @@ __ptext119:
 
 ;; *************** function _Param11 *****************
 ;; Defined at:
-;;		line 84 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+;;		line 109 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -428,18 +432,18 @@ __ptext119:
 ;; This function uses a non-reentrant model
 ;;
 psect	text119
-	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-	line	84
+	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+	line	109
 	global	__size_of_Param11
 	__size_of_Param11	equ	__end_of_Param11-_Param11
 	
 _Param11:	
 	opt	stack 6
 ; Regs used in _Param11: [wreg+status,2+status,0+pclath+cstack]
-	line	85
+	line	110
 	
 l2603:	
-;Untitled.c: 85: if(Param11isAlive){
+;Source.c: 110: if(Param11isAlive){
 	movf	(_Param11isAlive+1),w
 	iorwf	(_Param11isAlive),w
 	skipnz
@@ -449,10 +453,10 @@ u2311:
 	goto	l690
 u2310:
 	goto	l686
-	line	86
+	line	111
 	
 l2605:	
-;Untitled.c: 86: while (! TMR1IF);
+;Source.c: 111: while (! TMR1IF);
 	goto	l686
 	
 l687:	
@@ -468,21 +472,21 @@ u2321:
 u2320:
 	
 l688:	
-	line	87
-;Untitled.c: 87: TMR1IF = 0;
+	line	112
+;Source.c: 112: TMR1IF = 0;
 	bcf	(96/8),(96)&7
-	line	88
+	line	113
 	
 l2607:	
-;Untitled.c: 88: Count ++;
+;Source.c: 113: Count ++;
 	movlw	low(01h)
 	addwf	(_Count),f
 	skipnc
 	incf	(_Count+1),f
 	movlw	high(01h)
 	addwf	(_Count+1),f
-	line	89
-;Untitled.c: 89: if (Count == 100)
+	line	114
+;Source.c: 114: if (Count == 100){
 	movlw	064h
 	xorwf	(_Count),w
 	iorwf	(_Count+1),w
@@ -492,34 +496,33 @@ l2607:
 u2331:
 	goto	l690
 u2330:
-	line	92
+	line	115
 	
 l2609:	
-;Untitled.c: 90: {
-;Untitled.c: 92: Count = 0;
+;Source.c: 115: Count = 0;
 	clrf	(_Count)
 	clrf	(_Count+1)
-	line	93
+	line	116
 	
 l2611:	
-;Untitled.c: 93: ButtonOnOF();
+;Source.c: 116: ButtonOnOF();
 	fcall	_ButtonOnOF
-	line	94
+	line	117
 	
 l2613:	
-;Untitled.c: 94: TMR1IF = 0;
+;Source.c: 117: TMR1IF = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(96/8),(96)&7
 	goto	l690
-	line	95
+	line	118
 	
 l689:	
 	goto	l690
-	line	96
+	line	119
 	
 l685:	
-	line	97
+	line	120
 	
 l690:	
 	return
@@ -536,7 +539,7 @@ __ptext120:
 
 ;; *************** function _Param6 *****************
 ;; Defined at:
-;;		line 79 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+;;		line 104 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -564,18 +567,18 @@ __ptext120:
 ;; This function uses a non-reentrant model
 ;;
 psect	text120
-	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-	line	79
+	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+	line	104
 	global	__size_of_Param6
 	__size_of_Param6	equ	__end_of_Param6-_Param6
 	
 _Param6:	
 	opt	stack 6
 ; Regs used in _Param6: [wreg+status,2+status,0+pclath+cstack]
-	line	80
+	line	105
 	
 l2599:	
-;Untitled.c: 80: if(Param6isAlive)
+;Source.c: 105: if(Param6isAlive)
 	movf	(_Param6isAlive+1),w
 	iorwf	(_Param6isAlive),w
 	skipnz
@@ -584,15 +587,15 @@ l2599:
 u2301:
 	goto	l682
 u2300:
-	line	81
+	line	106
 	
 l2601:	
-;Untitled.c: 81: ButtonOnOF();
+;Source.c: 106: ButtonOnOF();
 	fcall	_ButtonOnOF
 	goto	l682
 	
 l681:	
-	line	82
+	line	107
 	
 l682:	
 	return
@@ -609,13 +612,13 @@ __ptext121:
 
 ;; *************** function _ButtonOnOF *****************
 ;; Defined at:
-;;		line 27 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+;;		line 37 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
 ;;		None
 ;; Return value:  Size  Location     Type
-;;                  2  658[COMMON] int 
+;;		None               void
 ;; Registers used:
 ;;		wreg
 ;; Tracked objects:
@@ -637,18 +640,18 @@ __ptext121:
 ;; This function uses a non-reentrant model
 ;;
 psect	text121
-	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-	line	27
+	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+	line	37
 	global	__size_of_ButtonOnOF
 	__size_of_ButtonOnOF	equ	__end_of_ButtonOnOF-_ButtonOnOF
 	
 _ButtonOnOF:	
 	opt	stack 6
 ; Regs used in _ButtonOnOF: [wreg]
-	line	29
+	line	38
 	
 l2589:	
-;Untitled.c: 29: if(PORTAbits.RA0 == 0){
+;Source.c: 38: if(PORTAbits.RA0 == 0){
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfsc	(5),0	;volatile
@@ -657,10 +660,10 @@ l2589:
 u2271:
 	goto	l659
 u2270:
-	line	30
+	line	39
 	
 l2591:	
-;Untitled.c: 30: if(TimerMode){
+;Source.c: 39: if(TimerMode){
 	movf	(_TimerMode+1),w
 	iorwf	(_TimerMode),w
 	skipnz
@@ -669,10 +672,10 @@ l2591:
 u2281:
 	goto	l660
 u2280:
-	line	31
+	line	40
 	
 l2593:	
-;Untitled.c: 31: _delay((unsigned long)((2000)*(8000000/4000.0)));
+;Source.c: 40: _delay((unsigned long)((2000)*(8000000/4000.0)));
 	opt asmopt_off
 movlw  21
 movwf	((??_ButtonOnOF+0)+0+2),f
@@ -690,15 +693,15 @@ u2347:
 	clrwdt
 opt asmopt_on
 
-	line	32
+	line	41
 	
 l2595:	
-;Untitled.c: 32: PORTBbits.RB0=1;
+;Source.c: 41: PORTBbits.RB0 = 1;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bsf	(6),0	;volatile
-	line	33
-;Untitled.c: 33: }else PORTBbits.RB0=1;
+	line	42
+;Source.c: 42: }else PORTBbits.RB0 = 1;
 	goto	l659
 	
 l660:	
@@ -706,27 +709,27 @@ l660:
 	goto	l659
 	
 l661:	
-	line	34
+	line	43
 	
 l659:	
-	line	35
-;Untitled.c: 34: }
-;Untitled.c: 35: if(PORTAbits.RA1 == 0)
+	line	44
+;Source.c: 43: }
+;Source.c: 44: if(PORTAbits.RA1 == 0)
 	btfsc	(5),1	;volatile
 	goto	u2291
 	goto	u2290
 u2291:
 	goto	l663
 u2290:
-	line	36
+	line	45
 	
 l2597:	
-;Untitled.c: 36: PORTBbits.RB0=0;
+;Source.c: 45: PORTBbits.RB0 = 0;
 	bcf	(6),0	;volatile
 	goto	l663
 	
 l662:	
-	line	37
+	line	46
 	
 l663:	
 	return
@@ -735,7 +738,7 @@ GLOBAL	__end_of_ButtonOnOF
 	__end_of_ButtonOnOF:
 ;; =============== function _ButtonOnOF ends ============
 
-	signat	_ButtonOnOF,90
+	signat	_ButtonOnOF,88
 	global	_Param21
 psect	text122,local,class=CODE,delta=2
 global __ptext122
@@ -743,7 +746,7 @@ __ptext122:
 
 ;; *************** function _Param21 *****************
 ;; Defined at:
-;;		line 99 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+;;		line 122 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -770,18 +773,18 @@ __ptext122:
 ;; This function uses a non-reentrant model
 ;;
 psect	text122
-	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-	line	99
+	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+	line	122
 	global	__size_of_Param21
 	__size_of_Param21	equ	__end_of_Param21-_Param21
 	
 _Param21:	
 	opt	stack 7
 ; Regs used in _Param21: [wreg]
-	line	100
+	line	123
 	
 l1725:	
-;Untitled.c: 100: if(RelayPowerMode){
+;Source.c: 123: if(RelayPowerMode){
 	movf	(_RelayPowerMode+1),w
 	iorwf	(_RelayPowerMode),w
 	skipnz
@@ -790,10 +793,10 @@ l1725:
 u41:
 	goto	l696
 u40:
-	line	101
+	line	124
 	
 l1727:	
-;Untitled.c: 101: if(PORTAbits.RA4 == 0){
+;Source.c: 124: if(PORTAbits.RA4 == 0){
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfsc	(5),4	;volatile
@@ -802,13 +805,13 @@ l1727:
 u51:
 	goto	l694
 u50:
-	line	102
+	line	125
 	
 l1729:	
-;Untitled.c: 102: PORTBbits.RB1 = 1;
+;Source.c: 125: PORTBbits.RB1 = 1;
 	bsf	(6),1	;volatile
-	line	103
-;Untitled.c: 103: }else PORTBbits.RB1 = 0;
+	line	126
+;Source.c: 126: }else PORTBbits.RB1 = 0;
 	goto	l696
 	
 l694:	
@@ -817,10 +820,10 @@ l694:
 	
 l695:	
 	goto	l696
-	line	104
+	line	127
 	
 l693:	
-	line	105
+	line	128
 	
 l696:	
 	return
@@ -837,7 +840,7 @@ __ptext123:
 
 ;; *************** function _BooleanFlagsControl *****************
 ;; Defined at:
-;;		line 39 in file "C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
+;;		line 51 in file "C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -864,18 +867,18 @@ __ptext123:
 ;; This function uses a non-reentrant model
 ;;
 psect	text123
-	file	"C:\Users\Isahak\Desktop\MPLAB-master\Untitled.c"
-	line	39
+	file	"C:\Users\Isahak\Desktop\MPLAB-master\Source.c"
+	line	51
 	global	__size_of_BooleanFlagsControl
 	__size_of_BooleanFlagsControl	equ	__end_of_BooleanFlagsControl-_BooleanFlagsControl
 	
 _BooleanFlagsControl:	
 	opt	stack 7
 ; Regs used in _BooleanFlagsControl: [wreg+status,2]
-	line	40
+	line	52
 	
 l1703:	
-;Untitled.c: 40: if(PORTAbits.RA2 == 0){
+;Source.c: 52: if(PORTAbits.RA2 == 0){
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	btfsc	(5),2	;volatile
@@ -884,105 +887,105 @@ l1703:
 u11:
 	goto	l1709
 u10:
-	line	41
+	line	53
 	
 l1705:	
-;Untitled.c: 41: Param6isAlive=0;
+;Source.c: 53: Param6isAlive=0;
 	clrf	(_Param6isAlive)
 	clrf	(_Param6isAlive+1)
-	line	42
+	line	54
 	
 l1707:	
-;Untitled.c: 42: Param11isAlive=1;
+;Source.c: 54: Param11isAlive=1;
 	movlw	low(01h)
 	movwf	(_Param11isAlive)
 	movlw	high(01h)
 	movwf	((_Param11isAlive))+1
-	line	43
-;Untitled.c: 43: }else{
+	line	55
+;Source.c: 55: }else{
 	goto	l1713
 	
 l666:	
-	line	44
+	line	56
 	
 l1709:	
-;Untitled.c: 44: Param6isAlive=1;
+;Source.c: 56: Param6isAlive=1;
 	movlw	low(01h)
 	movwf	(_Param6isAlive)
 	movlw	high(01h)
 	movwf	((_Param6isAlive))+1
-	line	45
+	line	57
 	
 l1711:	
-;Untitled.c: 45: Param11isAlive=0;
+;Source.c: 57: Param11isAlive=0;
 	clrf	(_Param11isAlive)
 	clrf	(_Param11isAlive+1)
 	goto	l1713
-	line	46
+	line	58
 	
 l667:	
-	line	47
+	line	59
 	
 l1713:	
-;Untitled.c: 46: }
-;Untitled.c: 47: if(PORTAbits.RA3 == 0)
+;Source.c: 58: }
+;Source.c: 59: if(PORTAbits.RA3 == 0)
 	btfsc	(5),3	;volatile
 	goto	u21
 	goto	u20
 u21:
 	goto	l1717
 u20:
-	line	48
+	line	60
 	
 l1715:	
-;Untitled.c: 48: TimerMode=1;
+;Source.c: 60: TimerMode=1;
 	movlw	low(01h)
 	movwf	(_TimerMode)
 	movlw	high(01h)
 	movwf	((_TimerMode))+1
 	goto	l1719
-	line	49
+	line	61
 	
 l668:	
 	
 l1717:	
-;Untitled.c: 49: else TimerMode=0;
+;Source.c: 61: else TimerMode=0;
 	clrf	(_TimerMode)
 	clrf	(_TimerMode+1)
 	goto	l1719
 	
 l669:	
-	line	50
+	line	62
 	
 l1719:	
-;Untitled.c: 50: if(PORTAbits.RA4 == 0)
+;Source.c: 62: if(PORTAbits.RA4 == 0)
 	btfsc	(5),4	;volatile
 	goto	u31
 	goto	u30
 u31:
 	goto	l1723
 u30:
-	line	51
+	line	63
 	
 l1721:	
-;Untitled.c: 51: RelayPowerMode=1;
+;Source.c: 63: RelayPowerMode=1;
 	movlw	low(01h)
 	movwf	(_RelayPowerMode)
 	movlw	high(01h)
 	movwf	((_RelayPowerMode))+1
 	goto	l672
-	line	52
+	line	64
 	
 l670:	
 	
 l1723:	
-;Untitled.c: 52: else RelayPowerMode=0;
+;Source.c: 64: else RelayPowerMode=0;
 	clrf	(_RelayPowerMode)
 	clrf	(_RelayPowerMode+1)
 	goto	l672
 	
 l671:	
-	line	53
+	line	65
 	
 l672:	
 	return
